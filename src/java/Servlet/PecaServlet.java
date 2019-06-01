@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Servlet;
 
 import Dao.PecaDao;
 import Pojo.PecaPojo;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -19,10 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author ubnt
- */
 public class PecaServlet extends HttpServlet {
 
     PecaDao pecaDao = new PecaDao();
@@ -40,6 +30,7 @@ public class PecaServlet extends HttpServlet {
             throws ServletException, IOException {       
         try {
             
+      
             listPecaPojo = (ArrayList<PecaPojo>) pecaDao.listar();            
             request.setAttribute("listPecaPojo", listPecaPojo);
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("Peca.jsp");
